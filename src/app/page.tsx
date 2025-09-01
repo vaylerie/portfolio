@@ -1,103 +1,200 @@
-import Image from "next/image";
+"use client";
+
+import { motion, Variants } from "framer-motion";
+import ExperienceCard from "@/components/ExperienceCard";
+import ProjectCard from "@/components/ProjectCard";
+import TechStack from "@/components/TechStack";
+
+const fadeIn: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.1, 0.25, 1] as any,
+    },
+  },
+};
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="relative">
+      {/* ===== HERO ===== */}
+      <motion.section
+        id="home"
+        className="mx-auto max-w-6xl px-6 pt-16 md:pt-24"
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <div className="relative mt-10 md:mt-20">
+          {/* halo glow */}
+          <div className="pointer-events-none absolute -top-14 left-0 right-0 mx-auto h-56 w-56 rounded-full bg-pink-500/20 blur-[80px]" />
+          <p className="text-sm text-white/70">Hey there! I am Valerie</p>
+          <h1 className="mt-2 text-4xl md:text-6xl font-extrabold leading-tight">
+            Code. Design. <br className="hidden md:block" />
+            <span className="bg-gradient-to-r from-pink-400 via-pink-300 to-pink-300 bg-clip-text text-transparent">
+              Create.
+            </span>
+          </h1>
+          <p className="mt-4 max-w-2xl text-white/70">
+            Currently focused on building delightful, accessible digital
+            products. I care about craft, performance, and visuals that feel
+            alive.
+          </p>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <a
+              href="#projects"
+              className="rounded-full bg-gradient-to-r from-pink-500 to-pink-600 px-6 py-3 text-sm font-semibold shadow-lg transition hover:brightness-110 hover:shadow-pink-500/50"
+            >
+              View Projects
+            </a>
+            <a
+              href="#contact"
+              className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white/90 hover:bg-white/5 hover:shadow-pink-500/20"
+            >
+              Contact
+            </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+      </motion.section>
+
+      {/* ===== ABOUT ===== */}
+      <motion.section
+        id="about"
+        className="mx-auto max-w-6xl px-6 py-20 hover:shadow-pink-500/20 transition-shadow"
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <div className="rounded-3xl border border-white/10 bg-white/[0.04] hover:-translate-y-1 hover:shadow-[0_20px_60px_-20px_rgba(236,72,153,0.55)] hover:shadow-pink-500/50 transition p-8 backdrop-blur-xl">
+          <h2 className="text-2xl md:text-3xl font-semibold">
+            I&apos;m an AI Developer & Researcher
+          </h2>
+          <p className="mt-3 max-w-3xl text-white/70">
+            Exploring the synergy of code, design, and intelligence. I build
+            AI-driven solutions, dive deep into research, and craft visuals that
+            speak creativity.
+          </p>
+        </div>
+      </motion.section>
+
+      {/* ===== WORK EXPERIENCE ===== */}
+      <motion.section
+        id="work"
+        className="mx-auto max-w-6xl px-6 pb-10"
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <h3 className="text-xl md:text-2xl font-semibold">Work Experience</h3>
+
+        <div className="mt-6 grid gap-6 md:grid-cols-2">
+          <ExperienceCard
+            title="CIB on the Mobile"
+            subtitle="Designing and shipping mobile experiences with a focus on accessibility and performance."
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+          <ExperienceCard
+            title="CIB on the Mobile"
+            subtitle="Leading the frontend revamp with design systems and micro-interactions."
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+          <ExperienceCard
+            title="CIB on the Mobile"
+            subtitle="Delivering experiments and A/B tests to validate product direction."
           />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          <ExperienceCard
+            title="CIB on the Mobile"
+            subtitle="Collaborated across functions to ship impactful features at scale."
+          />
+        </div>
+      </motion.section>
+
+      {/* decorative center piece */}
+      <motion.section
+        className="mx-auto max-w-6xl px-6 py-24 hover:shadow-pink-500/20 transition-shadow"
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <div className="relative grid place-items-center">
+          <div className="absolute -z-10 h-72 w-72 rounded-full bg-pink-600/20 blur-[100px]" />
+          <div className="rounded-full border border-white/20 bg-white/5 px-6 py-4 text-2xl backdrop-blur-xl shadow-[0_10px_50px_-20px_rgba(236,72,153,0.8)] hover:shadow-pink-500/50 transition-shadow">
+            ✧
+          </div>
+          <p className="mt-4 text-center text-white/60 max-w-xl">
+            I’m currently looking to join a cross-functional team that values
+            improving people’s lives through accessible design.
+          </p>
+        </div>
+      </motion.section>
+
+      {/* ===== PROJECTS ===== */}
+      <motion.section
+        id="projects"
+        className="scroll-mt-24 mx-auto max-w-6xl px-6 space-y-10"
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <ProjectCard
+          title="Example Project"
+          description="A web app for visualizing personalized data. Create and save new playlists of recommendations based on your patterns."
+        />
+        <ProjectCard
+          title="Design System Starter"
+          description="A tiny, themeable system with tokens, primitives and motion—built to scale across products."
+        />
+      </motion.section>
+
+      {/* ===== TECH STACK ===== */}
+      <motion.div
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <TechStack />
+      </motion.div>
+
+      {/* ===== CONTACT ===== */}
+      <motion.section
+        id="contact"
+        className="scroll-mt-24 mx-auto max-w-6xl px-6 py-24"
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <div className="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <h3 className="text-xl md:text-2xl font-semibold">Contact</h3>
+            <p className="mt-3 text-white/70">
+              Have a project in mind or want to say hi? Let’s connect.
+            </p>
+            <div className="mt-6 space-y-1 text-sm text-white/70">
+              <div>valleriebritania@gmail.com</div>
+              <div className="flex gap-4 pt-2">
+                <a href="https://instagram.com" className="hover:text-white">
+                  IG
+                </a>
+                <a href="https://github.com" className="hover:text-white">
+                  GitHub
+                </a>
+                <a href="https://linkedin.com" className="hover:text-white">
+                  LinkedIn
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.section>
     </div>
   );
 }
