@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: "Valerie — Portfolio",
@@ -18,19 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="absolute bottom-0 left-1/4 h-[380px] w-[380px] rounded-full bg-pink-500/10 blur-[120px]" />
         </div>
 
-        {/* Optional: top bar minimal */}
-        <header className="sticky top-0 z-40 backdrop-blur-xl bg-black/40 border-b border-white/10">
-          <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
-            <div className="font-semibold tracking-wide">Valerie</div>
-            <nav className="hidden md:flex gap-8 text-sm text-white/80">
-              <a href="#home" className="hover:text-white hover:shadow-md hover:shadow-pink-500/50 transition-all">Home</a>
-              <a href="#about" className="hover:text-white hover:shadow-md hover:shadow-pink-500/50 transition-all">About</a>
-              <a href="#work" className="hover:text-white hover:shadow-md hover:shadow-pink-500/50 transition-all">Experience</a>
-              <a href="#projects" className="hover:text-white hover:shadow-md hover:shadow-pink-500/50 transition-all">Projects</a>
-              <a href="#contact" className="hover:text-white hover:shadow-md hover:shadow-pink-500/50 transition-all">Contact</a>
-            </nav>
-          </div>
-        </header>
+        <Navbar/>
 
         <main>{children}</main>
 

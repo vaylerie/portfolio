@@ -12,7 +12,7 @@ const fadeIn: Variants = {
     y: 0,
     transition: {
       duration: 0.8,
-      ease: [0.25, 0.1, 0.25, 1] as any,
+      ease: [0.25, 0.1, 0.25, 1],
     },
   },
 };
@@ -20,29 +20,32 @@ const fadeIn: Variants = {
 export default function Home() {
   return (
     <div className="relative">
-      {/* ===== HERO ===== */}
       <motion.section
         id="home"
-        className="mx-auto max-w-6xl px-6 pt-16 md:pt-24"
+        className="mx-auto max-w-6xl px-6 pt-16 md:pt-24 h-screen flex flex-col justify-center"
         variants={fadeIn}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
       >
-        <div className="relative mt-10 md:mt-20">
+        <div className="relative">
           {/* halo glow */}
           <div className="pointer-events-none absolute -top-14 left-0 right-0 mx-auto h-56 w-56 rounded-full bg-pink-500/20 blur-[80px]" />
+
           <p className="text-sm text-white/70">Hey there! I am Valerie</p>
+
           <h1 className="mt-2 text-4xl md:text-6xl font-extrabold leading-tight">
-            Code. Design. <br className="hidden md:block" />
+            Code, Create, <br className="hidden md:block" />
             <span className="bg-gradient-to-r from-pink-400 via-pink-300 to-pink-300 bg-clip-text text-transparent">
-              Create.
+              Conquer
             </span>
           </h1>
+
           <p className="mt-4 max-w-2xl text-white/70">
-            Currently focused on building delightful, accessible digital
-            products. I care about craft, performance, and visuals that feel
-            alive.
+            Currently focused on developing intelligent solutions and creative
+            systems.
+            <br />
+            Frontend isn’t my thing, but hey—it works!
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -71,7 +74,7 @@ export default function Home() {
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
       >
-        <div className="rounded-3xl border border-white/10 bg-white/[0.04] hover:-translate-y-1 hover:shadow-[0_20px_60px_-20px_rgba(236,72,153,0.55)] hover:shadow-pink-500/50 transition p-8 backdrop-blur-xl">
+        {/* <div className="rounded-3xl border border-white/10 bg-white/[0.04] hover:-translate-y-1 hover:shadow-[0_20px_60px_-20px_rgba(236,72,153,0.55)] hover:shadow-pink-500/50 transition p-8 backdrop-blur-xl">
           <h2 className="text-2xl md:text-3xl font-semibold">
             I&apos;m an AI Developer & Researcher
           </h2>
@@ -80,7 +83,7 @@ export default function Home() {
             AI-driven solutions, dive deep into research, and craft visuals that
             speak creativity.
           </p>
-        </div>
+        </div> */}
       </motion.section>
 
       {/* ===== WORK EXPERIENCE ===== */}
