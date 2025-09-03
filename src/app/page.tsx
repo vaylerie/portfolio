@@ -32,12 +32,12 @@ export default function Home() {
           {/* halo glow */}
           <div className="pointer-events-none absolute -top-14 left-0 right-0 mx-auto h-56 w-56 rounded-full bg-pink-500/20 blur-[80px]" />
 
-          <p className="text-sm text-white/70">Hey there! I am Valerie</p>
+          <p className="text-sm text-white/70">Hey there! I am Vallerie</p>
 
           <h1 className="mt-2 text-4xl md:text-6xl font-extrabold leading-tight">
-            Code, Create, <br className="hidden md:block" />
+            Think. Code. <br className="hidden md:block" />
             <span className="bg-gradient-to-r from-pink-400 via-pink-300 to-pink-300 bg-clip-text text-transparent">
-              Conquer
+              and a little magic.
             </span>
           </h1>
 
@@ -66,7 +66,7 @@ export default function Home() {
       </motion.section>
 
       {/* ===== ABOUT ===== */}
-      <motion.section
+      {/* <motion.section
         id="about"
         className="mx-auto max-w-6xl px-6 py-20 hover:shadow-pink-500/20 transition-shadow"
         variants={fadeIn}
@@ -74,7 +74,7 @@ export default function Home() {
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
       >
-        {/* <div className="rounded-3xl border border-white/10 bg-white/[0.04] hover:-translate-y-1 hover:shadow-[0_20px_60px_-20px_rgba(236,72,153,0.55)] hover:shadow-pink-500/50 transition p-8 backdrop-blur-xl">
+        <div className="rounded-3xl border border-white/10 bg-white/[0.04] hover:-translate-y-1 hover:shadow-[0_20px_60px_-20px_rgba(236,72,153,0.55)] hover:shadow-pink-500/50 transition p-8 backdrop-blur-xl">
           <h2 className="text-2xl md:text-3xl font-semibold">
             I&apos;m an AI Developer & Researcher
           </h2>
@@ -83,13 +83,13 @@ export default function Home() {
             AI-driven solutions, dive deep into research, and craft visuals that
             speak creativity.
           </p>
-        </div> */}
-      </motion.section>
+        </div>
+      </motion.section> */}
 
       {/* ===== WORK EXPERIENCE ===== */}
       <motion.section
         id="work"
-        className="mx-auto max-w-6xl px-6 pb-10"
+        className="mx-auto max-w-6xl px-6 pb-24"
         variants={fadeIn}
         initial="hidden"
         whileInView="show"
@@ -97,28 +97,46 @@ export default function Home() {
       >
         <h3 className="text-xl md:text-2xl font-semibold">Work Experience</h3>
 
-        <div className="mt-6 grid gap-6 md:grid-cols-2">
+        <div className="mt-6 grid gap-6">
           <ExperienceCard
-            title="CIB on the Mobile"
-            subtitle="Designing and shipping mobile experiences with a focus on accessibility and performance."
+            title="AI Developer"
+            subtitle="Versa Digicipta Semesta - Manado, Indonesia"
+            year="2023 - Present"
+            list={["Integrated a multimodal AI chatbot to recommend personalized artwork via text and image inputs.", 
+              "Designed embedding pipelines and vector indexing to support fast and accurate similarity search.",
+              "Implemented content-based image retrieval using CLIP and FAISS to support intelligent image search and matching functionality.",
+              "Translated user needs into AI-driven features through cross-functional collaboration.",
+              "Developed scalable web apps with modern stacks like Next.js and React."]}
           />
+        </div>
+      </motion.section>
+
+      {/* ===== EDUCATION EXPERIENCE ===== */}
+      <motion.section
+        id="work"
+        className="mx-auto max-w-6xl px-6 pb-24"
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <h3 className="text-xl md:text-2xl font-semibold">Education</h3>
+
+        <div className="mt-6 grid gap-6">
           <ExperienceCard
-            title="CIB on the Mobile"
-            subtitle="Leading the frontend revamp with design systems and micro-interactions."
-          />
-          <ExperienceCard
-            title="CIB on the Mobile"
-            subtitle="Delivering experiments and A/B tests to validate product direction."
-          />
-          <ExperienceCard
-            title="CIB on the Mobile"
-            subtitle="Collaborated across functions to ship impactful features at scale."
+            title="Information Systems (Bachelor of Computer Science)"
+            subtitle="Universitas Sam Ratulangi - Manado, Indonesia"
+            year="Aug 2021 - Mar 2025"
+            list={["Graduated with Honors in 3.6 years.",
+              "Thesis Project: Web-based Burn Severity Identification using XAI.",
+              "Active in research and community projects.",
+              "Contributing as teaching assistant."]}
           />
         </div>
       </motion.section>
 
       {/* decorative center piece */}
-      <motion.section
+      {/* <motion.section
         className="mx-auto max-w-6xl px-6 py-24 hover:shadow-pink-500/20 transition-shadow"
         variants={fadeIn}
         initial="hidden"
@@ -135,12 +153,12 @@ export default function Home() {
             improving people’s lives through accessible design.
           </p>
         </div>
-      </motion.section>
+      </motion.section> */}
 
       {/* ===== PROJECTS ===== */}
       <motion.section
         id="projects"
-        className="scroll-mt-24 mx-auto max-w-6xl px-6 space-y-10"
+        className="scroll-mt-24 mx-auto max-w-6xl px-6 py-16 space-y-10"
         variants={fadeIn}
         initial="hidden"
         whileInView="show"
@@ -184,13 +202,13 @@ export default function Home() {
             <div className="mt-6 space-y-1 text-sm text-white/70">
               <div>valleriebritania@gmail.com</div>
               <div className="flex gap-4 pt-2">
-                <a href="https://instagram.com" className="hover:text-white">
+                <a href="https://instagram.com/valeriebritania" className="hover:text-white">
                   IG
                 </a>
-                <a href="https://github.com" className="hover:text-white">
+                <a href="https://github.com/vaylerie" className="hover:text-white">
                   GitHub
                 </a>
-                <a href="https://linkedin.com" className="hover:text-white">
+                <a href="https://linkedin.com/in/valeriebritania" className="hover:text-white">
                   LinkedIn
                 </a>
               </div>

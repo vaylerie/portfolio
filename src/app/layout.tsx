@@ -3,8 +3,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
-  title: "Valerie — Portfolio",
-  description: "Software Engineer & Designer",
+  title: "Vallerie — Portfolio",
+  description: "Software Engineer | AI Enthusiast",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -25,7 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <footer className="mt-24 border-t border-white/10/20 bg-black/30 backdrop-blur">
           <div className="mx-auto max-w-6xl px-6 py-10 text-sm text-white/60">
-            © {new Date().getFullYear()} Valerie - Crafting digital experiences with heart
+            © {new Date().getFullYear()} Vallerie B
           </div>
         </footer>
       </body>
