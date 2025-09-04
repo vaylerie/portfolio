@@ -102,7 +102,7 @@ export default function Home() {
           <ExperienceCard
             title="AI Developer"
             subtitle="Versa Digicipta Semesta - Manado, Indonesia"
-            year="2023 - Present"
+            year="June 2025 - Present"
             list={["Integrated a multimodal AI chatbot to recommend personalized artwork via text and image inputs.", 
               "Designed embedding pipelines and vector indexing to support fast and accurate similarity search.",
               "Implemented content-based image retrieval using CLIP and FAISS to support intelligent image search and matching functionality.",
