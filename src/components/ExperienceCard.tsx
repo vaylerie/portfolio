@@ -18,7 +18,7 @@ export default function ExperienceCard({
   href,
 }: Props) {
   return (
-    <div className="group relative overflow-hidden rounded-2xl border border-white/5 bg-black/[0.02] p-5 backdrop-blur-xl transition hover:-translate-y-1 hover:shadow-[0_20px_60px_-20px_rgba(236,72,153,0.55)] hover:shadow-pink-500/50">
+    <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.05] p-5 backdrop-blur-xl transition hover:-translate-y-1 hover:shadow-[0_20px_60px_-20px_rgba(236,72,153,0.55)] hover:shadow-pink-500/50">
       {/* subtle inner glow */}
       <div className="pointer-events-none absolute -inset-px rounded-2xl bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 transition group-hover:opacity-100" />
       <div className="flex justify-between">

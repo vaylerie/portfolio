@@ -4,6 +4,7 @@ import { motion, Variants } from "framer-motion";
 import ExperienceCard from "@/components/ExperienceCard";
 import ProjectCard from "@/components/ProjectCard";
 import TechStack from "@/components/TechStack";
+import Contact from "@/components/Contact";
 
 const fadeIn: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -132,6 +133,15 @@ export default function Home() {
               "Active in research and community projects.",
               "Contributing as teaching assistant."]}
           />
+          <ExperienceCard
+            title="Machine Learning Cohort - Bangkit Academy"
+            subtitle="Google, Gojek, Tokopedia, Traveloka, and Dicoding - Indonesia"
+            year="Aug 2023 - Jan 2024"
+            list={["Selected as one of 300 out of 10,000+ applicants for intensive training in Machine Learning and Cloud Computing.",
+              "Capstone Project: Kawanua - Kawan Untuk Alam, a mobile app utilizing machine learning to identify endangered plant and animal species in Indonesia.",
+              "Role: ML Engineer in developing smart model for identifying local endangered species with 99% accuracy."]}
+            href="https://www.linkedin.com/feed/update/urn:li:activity:7158998387449593856/"
+          />
         </div>
       </motion.section>
 
@@ -164,23 +174,35 @@ export default function Home() {
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
       >
+        <h3 className="text-xl md:text-2xl font-semibold">Projects & Researches</h3>
         <ProjectCard
-          title="Example Project"
-          description="A web app for visualizing personalized data. Create and save new playlists of recommendations based on your patterns."
+          tag="Publication"
+          title="Optimizing CNN for burn severity classification using hyperband"
+          description="Developed a MobileNet-based CNN optimized with Hyperband to classify burn severity, published in AiTI Journal (SINTA 3 accredited)."
+          url="https://ejournal.uksw.edu/aiti/article/view/9916"
         />
         <ProjectCard
-          title="Design System Starter"
-          description="A tiny, themeable system with tokens, primitives and motion—built to scale across products."
+          tag="Bangkit Academy Capstone Project"
+          title="Kawanua - Kawan Untuk Alam"
+          description="Kawanua is a mobile application utilizing machine learning to identify endangered plant and animal species in Indonesia. Its primary objective is to empower users by enabling image capture for species identification, determining whether they fall into endangered categories. Additionally, the app serves as an educational platform, offering comprehensive species information to raise awareness about biodiversity conservation and the crucial role of endangered species in ecosystem balance. I contributed as ML Engineer in developing smart model for identifying local endangered species with 99% accuracy"
+        />
+        <ProjectCard
+          tag="Thesis Project"
+          title="Web-based Burn Severity Identification using XAI"
+          description="Developed a web application that utilizes a CNN model to classify burn severity from images, incorporating Explainable AI (XAI) techniques like Grad-CAM to enhance model transparency and user trust. The project aims to assist medical professionals in accurately assessing burn severity, thereby improving treatment decisions and patient outcomes."
         />
       </motion.section>
 
       {/* ===== TECH STACK ===== */}
       <motion.div
+        id="skills"
+        className="scroll-mt-24 mx-auto max-w-6xl px-6 py-16 space-y-10"
         variants={fadeIn}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
       >
+        <h3 className="text-xl md:text-2xl font-semibold">Skills</h3>
         <TechStack />
       </motion.div>
 
@@ -199,20 +221,7 @@ export default function Home() {
             <p className="mt-3 text-white/70">
               Have a project in mind or want to say hi? Let’s connect.
             </p>
-            <div className="mt-6 space-y-1 text-sm text-white/70">
-              <div>valleriebritania@gmail.com</div>
-              <div className="flex gap-4 pt-2">
-                <a href="https://instagram.com/valeriebritania" className="hover:text-white">
-                  IG
-                </a>
-                <a href="https://github.com/vaylerie" className="hover:text-white">
-                  GitHub
-                </a>
-                <a href="https://linkedin.com/in/valeriebritania" className="hover:text-white">
-                  LinkedIn
-                </a>
-              </div>
-            </div>
+            <Contact />
           </div>
         </div>
       </motion.section>
